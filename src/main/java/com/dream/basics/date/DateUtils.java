@@ -95,21 +95,6 @@ public class DateUtils {
 
     }
 
-
-    public static List getDayListOfMonth() {
-        List list = new ArrayList();
-        Calendar aCalendar = Calendar.getInstance(Locale.CHINA);
-        int year = aCalendar.get(Calendar.YEAR);//年份
-        int month = aCalendar.get(Calendar.MONTH) + 1;//月份
-        int day = aCalendar.getActualMaximum(Calendar.DATE);
-        for (int i = 1; i <= day; i++) {
-            String aDate = String.valueOf(year) + "/" + month + "/" + i;
-            list.add(aDate);
-        }
-        return list;
-    }
-
-
     /**
      * java 获取 获取某年某月 所有日期（yyyy-mm-dd格式字符串）
      *

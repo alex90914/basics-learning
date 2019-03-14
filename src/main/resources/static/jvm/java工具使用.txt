@@ -1,0 +1,10 @@
+jps
+jps -l 查看主类
+jps -m 主类接受的参数
+jps -v JVM参数
+jps -lmv
+
+
+
+jstat
+jstat -gcutil  pid

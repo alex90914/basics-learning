@@ -32,7 +32,6 @@ public class DateUtils2 {
     // 获得某天最大时间 2017-10-15 23:59:59
     public static Date getEndOfDay(Date date) {
         LocalDateTime localDateTime = LocalDateTime.ofInstant(Instant.ofEpochMilli(date.getTime()), ZoneId.systemDefault());
-        ;
         LocalDateTime endOfDay = localDateTime.with(LocalTime.MAX);
         return Date.from(endOfDay.atZone(ZoneId.systemDefault()).toInstant());
     }
