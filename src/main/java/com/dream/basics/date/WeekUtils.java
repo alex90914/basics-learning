@@ -7,17 +7,12 @@ package com.dream.basics.date;
  * @desc
  */
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.Calendar;
+import java.util.Date;
 
 public class WeekUtils {
-
-    public static void main(String[] args) {
-        WeekUtils cd = new WeekUtils();
-        System.out.println("开始时间:" + cd.getStartDayOfWeekNo(2019, 1));
-        System.out.println("结束时间:" + cd.getEndDayOfWeekNo(2019, 1));
-
-    }
-
     private Calendar getCalendarFormYear(int year) {
         Calendar cal = Calendar.getInstance();
         cal.set(Calendar.DAY_OF_WEEK, Calendar.MONDAY);
@@ -39,6 +34,27 @@ public class WeekUtils {
         cal.add(Calendar.DAY_OF_WEEK, 6);
         return cal.get(Calendar.YEAR) + "-" + (cal.get(Calendar.MONTH) + 1) + "-" + cal.get(Calendar.DAY_OF_MONTH);
     }
+    //2019-02-28 10:18:02
+    public static void main(String[] args) {
+        String today = "2019-02-28";
+        SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd");
+        Date date = null;
+        try {
+            date = format.parse(today);
+        } catch (ParseException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
+
+        Calendar calendar = Calendar.getInstance();
+        calendar.setFirstDayOfWeek(Calendar.MONDAY);
+        calendar.setTime(date);
+
+        System.out.println(calendar.get(Calendar.WEEK_OF_YEAR));
+    }
+
+
+
 }
 
 

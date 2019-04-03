@@ -149,11 +149,16 @@ public class DateUtils {
         return list;
     }
 
-
-
-
-
-
+    @Test
+    public void aaa() throws Exception {
+        String today = "2019-03-10";
+        SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd");
+        Date date = format.parse(today);
+        Calendar calendar = Calendar.getInstance();
+        calendar.setFirstDayOfWeek(Calendar.MONDAY);
+        calendar.setTime(date);
+        System.out.println(calendar.get(Calendar.WEEK_OF_YEAR));
+    }
 
 
 }
