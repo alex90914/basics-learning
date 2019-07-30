@@ -99,8 +99,8 @@ public class ListTest {
 	 */
 	@Test
 	public void listToMap() {
-		Map<Integer, Emp> appleMap = empList.stream().collect(Collectors.toMap(Emp::getAge, a -> a, (k1, k2) -> k1));
-
+		Map<Integer, Emp> empMap = empList.stream().collect(Collectors.toMap(Emp::getAge, a -> a, (k1, k2) -> k1));
+		System.out.println(empMap);
 	}
 
 
@@ -108,7 +108,7 @@ public class ListTest {
 	@Test
 	public void groupingBy() {
 		Map<Integer, List<Emp>> listMap = empList.stream().collect(Collectors.groupingBy(Emp::getAge));
-
+		System.out.println(listMap);
 	}
 
 }

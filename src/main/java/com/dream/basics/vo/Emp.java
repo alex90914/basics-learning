@@ -1,9 +1,11 @@
 package com.dream.basics.vo;
 
-import lombok.Getter;
+import lombok.AllArgsConstructor;
+import lombok.Data;
 import lombok.NoArgsConstructor;
-import lombok.Setter;
-import lombok.ToString;
+
+import javax.xml.bind.annotation.*;
+import java.io.Serializable;
 
 /**
  * @author WuBo
@@ -11,17 +13,25 @@ import lombok.ToString;
  * @create 2019-07-11 11:33
  * @desc
  */
-@Getter
-@Setter
-@ToString
+@XmlRootElement(name = "EMP")
+@XmlAccessorType(XmlAccessType.FIELD)
+@Data
 @NoArgsConstructor
-public class Emp {
-	private String  empName;
-	private Integer age;
+@AllArgsConstructor
+public class Emp extends Base implements Serializable {
+    @XmlElement(name = "EMP_NAME")
+    private String empName;
+    @XmlElement(name = "AGE")
+    private Integer age;
+    @XmlElement(name = "DEPT")
+    private Dept dept;
 
+    public Emp(String empName, Integer age) {
+        this.empName = empName;
+        this.age = age;
+    }
 
-
-	public Emp(Integer age) {
-		this.age = age;
-	}
+    public Emp(Integer age) {
+        this.age = age;
+    }
 }

@@ -7,8 +7,15 @@
     <groupId>com.dream.basics.learning</groupId>
     <artifactId>basics-learning</artifactId>
     <version>1.0-SNAPSHOT</version>
-
+    <properties>
+        <swagger2.version>2.7.0</swagger2.version>
+    </properties>
     <dependencies>
+        <dependency>
+            <groupId>javax.servlet</groupId>
+            <artifactId>javax.servlet-api</artifactId>
+            <version>3.0.1</version>
+        </dependency>
         <dependency>
             <groupId>commons-codec</groupId>
             <artifactId>commons-codec</artifactId>
@@ -64,7 +71,6 @@
             <artifactId>fastjson</artifactId>
             <version>1.2.47</version>
         </dependency>
-
         <dependency>
             <groupId>de.odysseus.staxon</groupId>
             <artifactId>staxon</artifactId>
@@ -75,5 +81,24 @@
             <artifactId>lombok</artifactId>
             <version>1.18.4</version>
         </dependency>
+
+
+        <dependency>
+            <groupId>commons-collections</groupId>
+            <artifactId>commons-collections</artifactId>
+            <version>3.2.2</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.apache.ant</groupId>
+            <artifactId>ant</artifactId>
+            <version>1.10.5</version>
+        </dependency>
+        <dependency>
+            <groupId>io.springfox</groupId>
+            <artifactId>springfox-swagger2</artifactId>
+            <version>${swagger2.version}</version>
+        </dependency>
+
     </dependencies>
 </project>
