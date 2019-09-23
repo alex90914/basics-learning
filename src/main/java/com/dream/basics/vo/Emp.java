@@ -26,6 +26,8 @@ public class Emp extends Base implements Serializable {
     @XmlElement(name = "DEPT")
     private Dept dept;
 
+
+
     public Emp(String empName, Integer age) {
         this.empName = empName;
         this.age = age;

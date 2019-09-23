@@ -1,5 +1,6 @@
 package com.dream.basics.lambda;
 
+import com.alibaba.fastjson.JSON;
 import com.dream.basics.vo.Emp;
 import com.google.common.collect.Lists;
 import org.junit.Before;
@@ -148,6 +149,28 @@ public class ListTest {
             result.add(data.stream().skip(index).limit(eachPieceSize).collect(Collectors.toList()));
         }
         return result;
+    }
+
+
+    @Test
+    public void sortTest() {
+        List<Emp> emps = new ArrayList<>();
+        Emp a = new Emp(11);
+        Emp b = new Emp(13);
+        Emp c = new Emp(12);
+        Emp d = new Emp(13);
+        Emp f = new Emp(14);
+        Emp g = new Emp(14);
+        emps.add(a);
+        emps.add(b);
+        emps.add(c);
+        emps.add(d);
+        emps.add(f);
+        emps.add(g);
+        List<Emp> list = emps.stream().sorted(Comparator.comparing(Emp::getAge).reversed()).collect(Collectors.toList());
+        list.forEach(e -> System.out.println(JSON.toJSONString(e)));
+
+
     }
 
 
